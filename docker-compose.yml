@@ -5,11 +5,11 @@ services:
     container_name: bitwardenrs
     restart: always
     ports:
-        - "127.0.0.1:8880:80" #将8880端口映射到镜像80端口
+        - "127.0.0.1:${LOCAL_PORT}:80"
         - "127.0.0.1:3012:3012"
     volumes:
       - ./bw-data:/data
     environment:
-      WEBSOCKET_ENABLED: "true" #开启WebSocket
-      SIGNUPS_ALLOWED: "true" #开启注册，自己注册后改成fale
-      WEB_VAULT_ENABLED: "true" #web客户端
+      WEBSOCKET_ENABLED: ${WEBSOCKET_ENABLED}
+      SIGNUPS_ALLOWED: ${SIGNUPS_ALLOWED}
+      WEB_VAULT_ENABLED: ${WEB_VAULT_ENABLED}

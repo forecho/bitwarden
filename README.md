@@ -44,14 +44,22 @@ vim /etc/docker/daemon.json
 sudo systemctl daemon-reload && sudo systemctl restart docker
 ```
 
-### 搭建环境
+### Clone Code
 
 ```
 git clone https://github.com/forecho/bitwarden-docker.git
 cd bitwarden-docker
 ```
 
-### 使用
+
+### Config env
+
+```shell
+cp .env.example .env
+```
+
+
+### Cmd
 
 ```
 docker-compose up -d #运行服务
